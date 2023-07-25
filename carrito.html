@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    
+    <div class="contenedor">
+        <aside>
+            <header>
+                <h1 class="logo"> Bacco Coffee</h1>
+            </header>
+            <nav>
+                <ul>
+                    <li>
+                        <a class="boton-menu boton-volver" href="./index.html">Seguir Comprando
+                    </li>
+                    <li>
+                        <a class="boton-menu boton-carrito active" href="./carrito.html">Carrito</a>
+                    </li>
+                </ul>        
+            </nav>
+
+            <footer>
+                <p class="texto-footer"> 2023 Bacco Coffe</p>
+            </footer>
+
+        </aside>
+        
+        <main>
+            <h2 class="titulo-principal">Todos los productos</h2>
+            <div class="contenedor-carrito">
+
+                <p id="carrito-vacio" class="carrito-vacio">Tu carrito esta vacio.</p>
+                <div id="carrito-productos" class="carrito-productos disabled">
+
+                    <!-- Productos en el carrito desde carrito.js -->
+
+                     <!-- <div class="carrito-producto">
+                        <img class="carrito-producto-imagen" src="./img/Cafe expresso.jpg" alt="cafe">
+                        <div class="carrito-producto-titulo">
+                            <small>Titulo</small>
+                            <h3>Cafe Expresso</h3>
+                        </div>
+                        <div class="carrito-producto-cantidad">
+                            <small>Cantidad</small>
+                            <p>1</p>
+                        </div>
+                        <div class="carrito-producto-precio">
+                            <small>Precio</small>
+                            <p>€2</p>
+                        </div>
+                        <div class="carrito-producto-subtotal">
+                            <small>Subtotal</small>
+                            <p>€2</p>
+                        </div>
+                        <button class="carrito-producto-eliminar">eliminar</button>
+                    </div>
+
+                    <div class="carrito-producto">
+                        <img class="carrito-producto-imagen" src="./img/Latte macchiato.jpg" alt="cafe">
+                        <div class="carrito-producto-titulo">
+                            <small>Titulo</small>
+                            <h3>Latte macchiato</h3>
+                        </div>
+                        <div class="carrito-producto-cantidad">
+                            <small>Cantidad</small>
+                            <p>2</p>
+                        </div>
+                        <div class="carrito-producto-precio">
+                            <small>Precio</small>
+                            <p>€2</p>
+                        </div>
+                        <div class="carrito-producto-subtotal">
+                            <small>Subtotal</small>
+                            <p>€4</p>
+                        </div>
+                        <button class="carrito-producto-eliminar">Eliminar</button>
+                    </div> -->
+                </div>
+                <div id="carrito-acciones" class="carrito-acciones disabled">
+                    <div class="carrito-acciones-izquierda">
+                        <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar carrito</button>
+                    </div>
+                    <div class="carrito-acciones-derecha">
+                        <div class="carrito-acciones-total">
+                            <p>Total</p>
+                            <p id="total">€6</p>
+                        </div>
+                        <button id="carrito-acciones-comprar" class="carrito-acciones-comprar"> Comprar ahora</button>
+                    </div>
+                </div>
+
+                <p id="carrito-comprado" class="carrito-comprado disabled">Gracias por su compra.</p>
+                
+            </div>
+        </main>
+    </div>
+
+
+    <script src="./js/carrito.js"></script>
+</body>
+</html>

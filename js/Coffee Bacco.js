@@ -1,12 +1,25 @@
 // Array de producto dinamico
 
 class Producto{
-    constructor(id,titulo, imagen, categoria, precio){
+    constructor(id,titulo, imagen, categoria, precio, cantidad){
         this.id = id
         this.titulo = titulo
         this.imagen = imagen
         this.categoria = categoria
         this.precio = precio
+        this.cantidad = cantidad
+    }
+}
+
+const productos = []
+const agregarProductosNuevos = ({id,titulo, imagen, categoria, precio, cantidad}) => {
+
+    if (productos.some(producto.id === id)) {
+        // console.warn("Ya existe un producto con ese id")
+    } else {
+        const nuevoProducto = new Producto(id,titulo, imagen, categoria, precio, cantidad);
+        productos.push(nuevoProducto);
+        localStorage.setItem('productos', JSON.stringify(productos));
     }
 }
 

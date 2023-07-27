@@ -12,16 +12,18 @@ class Producto{
 }
 
 const productos = []
-const agregarProductosNuevos = ({id,titulo, imagen, categoria, precio, cantidad}) => {
 
-    if (productos.some(producto.id === id)) {
-        // console.warn("Ya existe un producto con ese id")
+const agregarProductosNuevos = ({ id, titulo, imagen, categoria, precio, cantidad }) => {
+    if (productos.some(producto => producto.id === id)) {
+        console.warn("Ya existe un producto con ese id");
     } else {
-        const nuevoProducto = new Producto(id,titulo, imagen, categoria, precio, cantidad);
+        const nuevoProducto = new Producto(id, titulo, imagen, categoria, precio, cantidad);
         productos.push(nuevoProducto);
         localStorage.setItem('productos', JSON.stringify(productos));
     }
-}
+};
+
+
 
 // Arrays de productos base:
 

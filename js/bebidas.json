@@ -1,0 +1,51 @@
+[
+    {
+        "id": "cafe-expresso",
+        "titulo": "Cafe espresso",
+        "imagen": "./img/Cafe espresso.png",
+        "categoria": "bebidas-calientes",
+        "precio": 2
+    },
+    {
+        "id": "irish-coffee",
+        "titulo": "Irish coffee",
+        "imagen": "./img/Irish coffee.png",
+        "categoria": "bebidas-calientes",
+        "precio": 3
+    },
+    {
+        "id": "latte-macchiato",
+        "titulo": "Latte macchiato",
+        "imagen": "./img/Latte macchiato.webp",
+        "categoria": "bebidas-calientes",
+        "precio": 3
+    },
+    {
+        "id": "frappe-cafe",
+        "titulo": "Cafe frappe",
+        "imagen": "./img/Frappe cafe.png",
+        "categoria": "bebidas-frias",
+        "precio": 3
+    },
+    {
+        "id": "frappe-caramelo",
+        "titulo": "Caramelo frappe",
+        "imagen": "./img/Caramelo frappe.png",
+        "categoria": "bebidas-frias",
+        "precio": 4
+    },
+    {
+        "id": "frappe-cereza",
+        "titulo": "Cereza frappe",
+        "imagen": "./img/Cereza frappe.png",
+        "categoria": "bebidas-frias",
+        "precio": 4
+    },
+    {
+        "id": "frappe-chocolate",
+        "titulo": "Chocolate frappe",
+        "imagen": "./img/Chocolate frappe.png",
+        "categoria": "bebidas-frias",
+        "precio": 4
+    }
+]

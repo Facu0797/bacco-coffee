@@ -78,6 +78,25 @@ function actualizarBotonesEliminar() {
 
 // funcion para eliminar productos del carrito
 function eliminarDelCarrito(evento) {
+
+    /***** Libreria de Toastify *****/
+    Toastify({
+        text: "Se elimino el producto",
+        duration: 3000,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true, 
+        style: {
+          background: "linear-gradient(to right, #ff6347, #f1b0a4)",
+        },
+        offset: {
+            x: '1.5rem', 
+            y: '1.5rem' 
+          },
+        onClick: function(){}
+      }).showToast();
+
     const idBotonEliminar = evento.currentTarget.id;
     const index = productosDelCarrito.findIndex(producto => producto.id === idBotonEliminar);
 
@@ -91,11 +110,25 @@ function eliminarDelCarrito(evento) {
 botonVaciar.addEventListener("click", vaciarCarrito);
 // funcion que vacia todo el carrito
 function vaciarCarrito() {
-    
-    productosDelCarrito.length = 0
-    localStorage.setItem("productos-del-carrito", JSON.stringify(productosDelCarrito));
-    
-    cargarProductosAlCarrito();
+
+    /***** Libreria de SweetAlert *****/
+    Swal.fire({
+        title: 'Cuidado',
+        icon: 'question',
+        html: 'Se eliminaran todos tus productos',
+        showCancelButton: true,
+        focusConfirm: false,
+        confirmButtonText: 'Eliminar productos',
+        cancelButtonText: 'Continuar la compra',
+      }).then((result) => {
+        if (result.isConfirmed) {
+            productosDelCarrito.length = 0
+            localStorage.setItem("productos-del-carrito", JSON.stringify(productosDelCarrito));
+            
+            cargarProductosAlCarrito();
+        }
+      })
+
 
 }
 

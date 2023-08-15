@@ -22,7 +22,7 @@ a {
 .contenedor {
     display: grid;
     grid-template-columns:1fr 4fr;
-    background-color: tomato;
+    background-color: #ff6347;
 }
 
 /* ESTILOS DEL ASIDE */
@@ -135,7 +135,7 @@ main{
 .contenedor-carrito{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2rem; 
 }
 
 .carrito-vacio,

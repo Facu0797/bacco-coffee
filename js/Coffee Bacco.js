@@ -23,67 +23,14 @@ const agregarProductosNuevos = ({ id, titulo, imagen, categoria, precio, cantida
     }
 };
 
+let productosBase = []
 
-
-// Arrays de productos base:
-
-const productosBase = [
-
-    // bebidas calientes
-
-    {
-        id: "cafe-expresso",
-        titulo: "Cafe expresso",
-        imagen: "./img/Cafe expresso.jpg",
-        categoria: "bebidas-calientes",
-        precio: 2
-    },
-    {
-        id: "irish-coffee",
-        titulo: "Irish coffee",
-        imagen: "./img/Irish coffee.jpg",
-        categoria: "bebidas-calientes",
-        precio: 3
-    },
-    {
-        id: "latte-macchiato",
-        titulo: "Latte macchiato",
-        imagen: "./img/Latte macchiato.jpg",
-        categoria: "bebidas-calientes",
-        precio: 3
-    },
-
-    // bebidas frias
-
-    {
-        id: "frappe-cafe",
-        titulo: "Frappe cafe",
-        imagen: "./img/Frappe cafe.jpg",
-        categoria: "bebidas-frias",
-        precio: 3
-    },
-    {
-        id: "frappe-caramelo",
-        titulo: "Frappe caramelo",
-        imagen: "./img/Frappe caramelo.jpg",
-        categoria: "bebidas-frias",
-        precio: 4
-    },
-    {
-        id: "frappe-cereza",
-        titulo: "Frappe cereza",
-        imagen: "./img/Frappe cereza.jpg",
-        categoria: "bebidas-frias",
-        precio: 4
-    },
-    {
-        id: "frappe-chocolate",
-        titulo: "Frappe chocolate",
-        imagen: "./img/Frappe chocolate.jpg",
-        categoria: "bebidas-frias",
-        precio: 4
-    }
-]
+fetch("./js/bebidas.json")
+    .then(res => res.json())
+    .then(data => {
+        productosBase = data
+        cargarProductosAlHtml(productosBase)
+    })
 
 const contenedorProductos = document.querySelector("#contenedor-productos");
 const botonesCategorias = document.querySelectorAll(".boton-categoria");
@@ -117,9 +64,6 @@ function cargarProductosAlHtml(productosElejidos) {
     actualizarBotonesAgregar();
 
 }
-cargarProductosAlHtml(productosBase)
-
-
 
 botonesCategorias.forEach(boton => {
     boton.addEventListener("click", (evento) => {
@@ -170,6 +114,24 @@ if (productosDelCarritoLocalStorage) {
 
 // funcion para agregar los productos al carrito
 function agregarAlCarrito(evento) {
+
+    /***** Libreria de Toastify *****/
+    Toastify({
+        text: "Se agrego al carrito",
+        duration: 3000,
+        close: true,
+        gravity: "top",
+        position: "right",
+        stopOnFocus: true,
+        style: {
+          background: "linear-gradient(to right, #ff6347, #f1b0a4)",
+        },
+        offset: {
+            x: '1.5rem',
+            y: '1.5rem'
+          },
+        onClick: function(){}
+      }).showToast();
     
     const idBotonAgregar = evento.currentTarget.id;
     const productoAgregado = productosBase.find(producto => producto.id === idBotonAgregar);
